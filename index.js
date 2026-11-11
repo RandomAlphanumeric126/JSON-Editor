@@ -1,16 +1,16 @@
 'use strict';
 
 /* Tasks:
-   [ ] - Create simple navigation bar panel
+   [X] - Create simple navigation bar panel
    [X] - Create simple path tree panel
    [X] - Create simple browser panel
    [X] - Create simple value panel
    [ ] - Implement double click functionality for:
          [ ] - Expanding branches in the tree
-         [ ] - Stepping into keys (folders) in the browser
+         [X] - Stepping into keys (folders) in the browser
          [ ] - Display cell value in larger popup/modal
-   [ ] - Create and maintain a navigation history
-   [ ] - Implement forward, back, and step out navigation controls
+   [X] - Create and maintain a navigation history
+   [X] - Implement forward, back, and step out navigation controls
    [X] - Refactor the element querySelectors to globals.js
    [ ] - Create a method for validating a pathArr
          - Each entry needs to be a valid, non-empty string.

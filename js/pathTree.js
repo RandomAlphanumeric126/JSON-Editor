@@ -8,8 +8,8 @@
                   - Is there a way to reduce the amount stored in memory too?
       [X] - Refactor the element querySelectors to globals.js
       [ ] - Handle case in navigateToPath: Path does not exist
-      [ ] - Fix TypeError when double clicking a leaf key.
-      [ ] - Uncaught TypeError: Node.appendChild: Argument 1 is not an object.
+      [X] - Fix TypeError when double clicking a leaf key.
+      [?] - Uncaught TypeError: Node.appendChild: Argument 1 is not an object.
             - Encountered when initializing the pathTree with an empty object/array (has no children at the root)
 */
 

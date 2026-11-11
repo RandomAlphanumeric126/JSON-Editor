@@ -1,5 +1,5 @@
 /* Tasks:
-      [ ] - Prevent a single click action from firing when click-holding on a second click
+      [-] - Prevent a single click action from firing when click-holding on a second click
             - The intended behavior is to wait for the release of the mouse button before triggering an action
       [ ] - Handle cases where user clicks and drags away from the element
             - Currently there is a bug where a single click will always fire if the user drags away when holding the second click.
@@ -12,7 +12,7 @@
       [ ] - Modify parameters for addClickListener to take an array of click actions.
             [ ] - Takes either a callback function OR an array of callbacks
                   - if only a single callback is provided, the multiclick is unneeded, so action should fire as soon as possible.
-      [ ] - Uncaught TypeError: Node.appendChild: Argument 1 is not an object.
+      [?] - Uncaught TypeError: Node.appendChild: Argument 1 is not an object.
             - forces a double click state until a valid double click is performed. Only then can users return to a single click op.
 
 */

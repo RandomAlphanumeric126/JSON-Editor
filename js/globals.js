@@ -4,7 +4,7 @@
    [X] - Create a means to template the internal properties restricting variable modification.
       [ ] - Create a method for defining the g_internalProps object from outside this module.
    [X] - Create a way to bypass the proxy and read the raw g_target object for logging/reference.
-   [ ] - Consider moving the addProp calls to the index.js module instead of here.
+   [X] - Move the addProp calls to the index.js module instead of here.
    [ ] - Refactor handler.get() to check for non-exist props. Alert on occurance.
    [?] - Refactor handler.set() to check for non-exist props. Alert on occurance.
    [ ] - Implement use of Reflect.get() and Reflect.set() in getter setter.

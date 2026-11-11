@@ -6,7 +6,7 @@
    [X] - Enable word wrapping for the valueCell in the preview table
    [X] - Erase the key table when the user clicks empty space (deselects current selection)
    [X] - Replace the instructions inside the preview table when user performs a de-selection
-   [ ] - Highlight/outline or in some other way indicate which cell was selected to be displayed
+   [X] - Highlight/outline or in some other way indicate which cell was selected to be displayed
          in the preview table.
    [ ] - Revert the preview table from a set of divs back to proper table elements
    [X] - Refactor the previewPanel querySelector to globals.js
