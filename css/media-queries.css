@@ -1,0 +1,63 @@
+@media (prefers-color-scheme: dark) {
+
+   :root { /* Color Tokens */
+      --global-bg              : var(--color-gray-100);
+      --global-text-color_base : var(--color-white-930);
+      --global-text-color_soft : hsla(from var(--color-white-930) h s l / 0.5);
+
+      --nav-panel-bg           : var(--global-bg);
+      --location-bar-bg         : hsl(from var(--global-bg) h s calc(l - 2));
+      --address-bar-bg         : hsl(from var(--location-bar-bg) h s calc(l - 2));
+      
+      --path-tree-bg           : var(--color-black-060);
+      
+      --key-browser-bg         : var(--color-black-050);
+      --key-value-color_hover  : var(--color-black-070);
+      
+      --value-panel-bg         : var(--color-black-060);
+
+      --button-bg-base         : var(--color-gray-500);
+
+      --selection-bg           : hsl(from var(--color-primary-vivid-700) h s l / 0.25);
+      --selection-stroke-color : hsl(from var(--color-primary-vivid-700) h s l / 0.85);
+      --focus-stroke-color     : var(--color-secondary-vivid-500);
+   }
+
+      :root { /* Button overrides */
+   
+         --button-l-steps: 15;
+   
+         --button-bg-base             : var(--color-gray-800);
+         --button-bg-hover            : hsl(from var(--button-bg-base) h s calc(l + var(--button-l-steps)));
+         --button-bg-active           : hsl(from var(--button-bg-base) h s calc(l - var(--button-l-steps)));
+         --button-bg-disabled         : hsla(from var(--button-bg-base) h s l / 0.7);
+         --button-bg-focus            : var(--button-bg-hover);
+   
+         --button-stroke-color_base   : hsl(from var(--button-bg-base) h s calc(l - 30));
+         --button-stroke-color_hover  : hsl(from var(--button-bg-hover) h s calc(l - 30));
+         --button-stroke-color_active : hsl(from var(--button-bg-active) h s calc(l - 30));
+         --button-stroke-color_focus  : var(--button-stroke-color_hover);
+   
+         .nav-bar {
+            --button-l-steps: 5;
+   
+            --button-bg-base     : var(--color-gray-200);
+            --button-bg-hover    : hsl(from var(--button-bg-base) h s calc(l + var(--button-l-steps)));
+            --button-bg-active   : hsl(from var(--button-bg-base) h s calc(l - var(--button-l-steps)));
+            --button-bg-disabled : hsla(from var(--button-bg-base) h s l / 0.7);
+            --button-bg-focus    : var(--button-bg-hover);
+   
+            --button-stroke-color_base   : hsl(from var(--button-bg-base) h s calc(l - 30));
+            --button-stroke-color_hover  : hsl(from var(--button-bg-hover) h s calc(l - 30));
+            --button-stroke-color_active : hsl(from var(--button-bg-active) h s calc(l - 30));
+            --button-stroke-color_focus  : var(--button-stroke-color_hover);
+         }
+   
+         .key-value img,
+         .preview-header-wrapper img {
+            filter: brightness(5);
+         }
+   
+      }
+
+}

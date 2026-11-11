@@ -1,0 +1,43 @@
+.key-browser-grid {
+
+   /* https://codepen.io/M_J_Robbins/pen/DgRvOa */
+   overflow : auto;
+
+   display               : grid;
+   flex-wrap             : wrap;
+   justify-content       : stretch;
+   gap                   : var(--key-browser-grid-gap);
+   grid-template-columns : repeat(auto-fill, minmax(var(--key-browser-tile-width), 1fr));
+   padding               : var(--panel-padding);
+   
+}
+
+
+
+.key-value {
+
+   display         : flex;
+   flex-direction  : column;
+   justify-content : flex-start;
+   align-items     : center;
+   gap             : var(--key-browser-tile-gap);
+   overflow        : hidden;
+   border-radius   : var(--global-border-radius);
+   padding         : var(--key-browser-tile-padding);
+
+
+   img {
+      width        : var(--key-browser-icon-size);
+      aspect-ratio : 1;
+      text-align   : center;     /* Trick used to center the image */
+   }
+
+
+   label {
+      display            : -webkit-box;
+      -webkit-line-clamp : 3;
+      line-clamp         : 3;
+      -webkit-box-orient : vertical;
+   }
+
+}

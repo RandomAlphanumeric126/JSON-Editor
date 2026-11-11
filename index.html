@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   
+   <!-- Tabler Font Icons -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+   
+   <!-- Open-Sans Font Import -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+   
+   <!-- Low Priority Styles -->
+   <link rel="stylesheet" href="./css/reset.css"              >
+   <link rel="stylesheet" href="./css/variables.css"          >
+   <link rel="stylesheet" href="./css/typography.css"         >
+   
+   <!-- Mid Priority Styles -->
+   <link rel="stylesheet" href="./index.css"                  >
+   <link rel="stylesheet" href="./css/layout.css"             >
+   <link rel="stylesheet" href="./css/components.css"         >
+
+   <!-- High Priority Styles -->
+   <link rel="stylesheet" href="./css/panels/path-tree.css"   >
+   <link rel="stylesheet" href="./css/panels/key-browser.css" >
+   <link rel="stylesheet" href="./css/panels/nav-bar.css"     >
+   <link rel="stylesheet" href="./css/panels/value-panel.css" >
+
+   <!-- Style Overrides - Media Queries -->
+   <link rel="stylesheet" href="./css/media-queries.css"      >
+
+   <script src="index.js" type="module" defer></script>
+
+</head>
+<body>
+   
+   <div id="nav-bar" class="nav-bar">
+
+      <div class="nav-buttons">
+         <button class="btn-back"><span class="ti ti-arrow-left"></span></button>
+         <button class="btn-forward"><span class="ti ti-arrow-right"></span></button>
+         <button class="btn-up"><span class="ti ti-arrow-up"></span></button>
+      </div>
+
+      <form class="location-bar">
+
+         <div>
+            <label class="file-picker button">
+               <span id="file-picker-text" class="file-picker-text">Select a file</span>
+               <input id="file-select" class="file-select" type="file" name="" accept=".json">
+            </label>
+            
+            <span class="address-wrapper">
+               <input class="address-bar" type="text"/>
+            
+               <button class="btn-submit" type="submit"><span class="ti ti-arrow-down"></span></button>
+            </span>
+         </div>
+
+      </form>
+
+   </div>
+
+
+   <div class="path-tree-wrapper">
+      <button id="load-test-data" style="
+         color: var(--color-white-910);
+         margin:0.5em;
+         background-color: var(--color-primary-base-500);
+         border: 1px solid;
+         border-color: var(--color-primary-base-500);"
+      >Load Test Data</button>
+      <div id="path-tree" class="path-tree"></div>
+   </div>
+
+
+   <div id="key-browser-wrapper" class="key-browser-wrapper">
+      <div class="key-browser-scrollbox">
+         <div class="key-browser-grid"></div>
+      </div>
+   </div>
+
+   
+   <div id="value-panel" class="value-panel">
+      <div class="preview-table-wrapper">
+
+         <div class="preview-header-wrapper">
+            <h4>Make a selection...</h4>
+            <img src="./assets/icons/null.svg" alt="">
+         </div>
+
+         <hr>
+
+         <div class="preview-value-wrapper">
+            <p>The value of the current selection will be displayed here...</p>
+         </div>
+         
+      </div>
+   </div>
+
+</body>
+</html>

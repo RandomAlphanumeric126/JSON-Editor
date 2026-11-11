@@ -1,0 +1,100 @@
+==================================================
+
+Alternative Idea:
+Don't over complicate this...
+    - Consider just displaying the top level keys in a <ul> using root.keys()
+        - loop through root.keys() and determine which are objects
+        - display only the object keys inside <li> elements
+    - Maintain a variable (or object) that holds the value of the selected key
+        - This will just be a reference to the actual data in memory, not a copy
+        - Get the children for expanding in the tree only when needed (when clicked)
+          by using <selected>.keys() and filtering for object keys
+        - When collapsing, the nested list can be deleted from the DOM
+    - Maintain a variable (or object) that holds the full path of the selected key
+    - Maintain a variable (or object) that holds the parent key by reference
+
+    - Potential object for selected path/node/key:
+
+      const expandedKeys = {
+          path    : ["root", "parent", "this"]
+          value   : <reference to root.parent.this>,
+          parent  : <reference to root.parent>,
+          children: root.parent.this.entries();
+      }
+
+    - When clicking on an <li> I can use a while loop to iterate up the node parent
+      tree until node.parent.dataset.name === "root" (or whatever is appropriate)
+        - Having the key name for each object key stored as a data-name attribute
+          makes it easy to rebuild the path from the DOM without polluting it with
+          long strings for deeply nested keys.
+        - The alternative would be to maintain a separate object where an id associated
+          with each dot-notated path (or path as array) is created and deleted when
+          appropriate. This may be faster, however, complicates the design and uses
+          more memory.
+
+
+==================================================
+
+
+Node object template
+
+const node = {
+   id: 0000001,
+   key: <this key's name from the json data>
+   parent: this.path[ this.path.length - 1 ]
+   path: {
+      "root": <node>,
+      "parent": <node>,
+      "this": <node>
+   },
+   subpaths: {
+      "child_1": <node>,
+      "child_2": <node>
+   }
+}
+
+// The tree array will hold every node in sequential order where the id is the index
+// this ensures rapid lookup based on the node.id which will be stored in the <li> too
+const tree = [
+    <root node>,
+    <node 1>,
+    <node 2>,
+    ...
+    <node n>
+]
+
+
+
+EXPLANATION:
+
+When the node is being rendered to the path tree, the <li> element will recieve an id of node-<id>
+
+Ideally, the id should be the index within an array that holds ALL nodes in contiguous order.
+   This will allow O(1) lookup time since the ID will also be the index inside the full array.
+   This approach simplifies the lookup that needs to occur when the user clicks the <li> and
+      it needs to lookup the node by id.
+
+   This may be bypassed if the <li> caontains a string with the path. Then the path can be parsed
+      in order to navigate the original json data. I suspect this approach would be slower though,
+      as it needs to run string.split() and then iterate through both the path array and the json data.
+      Using one array in sequential order of node id's maintains constant time lookup.
+
+The parent of the current node will always be (path.length - 1)
+
+The reason why we want to store the full path here is so we don't have to iterate
+   up the chain to get the location within the json data. Instead, the path is already
+   maintained here and can be quickly referenced to point the user and their changes
+   to the appropriat location within the original data.
+
+   The keys represent the name or index of the the associated node, and the value is a
+      reference to the actual node in memory (pointer).
+
+Having quick access to the full path directly in the path tree means we can reference it
+   as soon as the user clicks the <li> element associated with it by id.
+
+
+The subpaths will be referenced any time the user expands this path tree node to reveal
+   the associated subpaths. They will be rendered per request so we don't pollute the DOM
+   with unecessary elements. When the user expands the node, it will tell JS to create and
+   render the <ul> inside the current element. When the user collapses that node, JS will
+   remove these entries from the DOM.

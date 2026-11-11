@@ -1,0 +1,195 @@
+/*
+
+Todos:
+   [ ] - Create a separation between the object table and the preview table when both are displayed
+   [ ] - Add a class (or id) to each table to differentiate between them when styling
+   [ ] - Enable word wrapping for the valueCell in the preview table
+   [ ] - Consider building tables using a Proxy object like the globals proxy in index.js
+         - This would allow the table to be created and modified using dot notation which may be
+           more pleasant to work with
+
+*/
+
+import { getDataType } from "./helpers.js";
+
+
+const valuePanel = document.querySelector('#value-panel');
+
+
+
+export function updateValuePanel(_selectedData, _selectedKey) {
+
+   // Clear the value panel before updating
+   // TODO: replace the overwrite below with a proper removal of the table(s) to ensure eventlisteners can be either manually removed or garbage collected
+   valuePanel.innerHTML = '';
+   const previewSubpanel = buildPreviewSubpanel();
+
+
+   // NEW PLAN:
+   // Lets make the preview panel persistant. With it always available,
+   // we can modify it rather than create it? Also, We can set the default state of the
+   // table to include instructions to select a table cell for obj/arr's
+   valuePanel.appendChild(previewSubpanel);
+
+
+   // Shortcut vars
+   const valueAtKey  = _selectedData.jsonObject[_selectedKey];
+   const valueIsNull = valueAtKey === null;
+
+   // Handle primitives and null
+   if (valueIsNull || typeof valueAtKey !== 'object') {
+
+      // OLD
+      // const previewTable = buildPreviewSubpanel(_selectedKey, valueAtKey)
+      // valuePanel.appendChild(previewTable);
+
+
+      // NEW
+      previewSubpanel.replaceWith(buildPreviewSubpanel(_selectedKey, valueAtKey));
+
+   }
+
+   // Handle objects and arrays
+   else {
+      const objTable = buildObjectTable(valueAtKey);
+      valuePanel.appendChild(objTable);
+   }
+
+}
+
+
+// FIXME: Switch away from using a table as it doesn't want to cooperate with styling
+//        the value cell to scroll overflow content
+function _buildPreviewSubpanel(_key, _value) {
+
+   
+   const table      = document.createElement('table');
+   table.classList.add('preview-table');
+   
+   // Building the header
+   const headerRow  = table.insertRow();
+   const keyCell    = headerRow.insertCell();
+
+   keyCell.textContent = `${_key}   :   ${getDataType(_value)}`;
+   keyCell.style.textAlign = 'center';    // NOTE: temporary alignment until styled
+
+   
+   // Building the body
+   const previewRow = table.insertRow();
+   const valueCell  = previewRow.insertCell();
+
+   // Building the value wrapper for styling
+   const valueWrapper = document.createElement('div');
+
+   valueCell.appendChild(valueWrapper);
+
+   valueWrapper.textContent = _value;
+   valueWrapper.style.whiteSpace = 'wrap';   // NOTE: temporary white space until styled
+
+
+
+   const div = document.createElement('div');
+   div.appendChild(table);
+   div.classList.add('preview-table-wrapper');
+
+   
+   return div;
+
+
+}
+function buildPreviewSubpanel(_key = null, _value = null) {
+
+   // Building the empty table
+      // Building header cell
+         const headerWrapper = document.createElement('div');
+         const header        = document.createElement('label');
+         headerWrapper.appendChild(header);
+
+         // Add Classes
+            headerWrapper.classList.add('preview-header-wrapper');
+            header.classList.add('preview-header');
+      
+      // Building the value cell
+         const valueWrapper = document.createElement('div');
+         const value        = document.createElement('p');
+         valueWrapper.appendChild(value);
+
+         // Add Classes
+            valueWrapper.classList.add('preview-value-wrapper');
+            value.classList.add('preview-value');
+
+
+      // Building the parent wrapper
+         const parentWrapper = document.createElement('div');
+         parentWrapper.appendChild(headerWrapper);
+         parentWrapper.appendChild(valueWrapper);
+         // TODO: Add classes
+            parentWrapper.classList.add('preview-table-wrapper');
+
+   // Handle case: empty table requested
+   if (_key === null || _value === null) return parentWrapper;
+   
+   // Add content
+      value.textContent  = _value;
+      header.textContent = `${_key} : ${getDataType(_value)}`;
+
+   
+   return parentWrapper;
+   
+}
+
+function buildObjectTable(_keyValue) {
+
+   const objTable   = document.createElement('table');
+   const header     = objTable.insertRow();
+   const isArray    = Array.isArray(_keyValue);
+   const indexOrKey = isArray ? 'Index' : 'Key';
+
+   objTable.classList.add('object-table');
+
+
+   for ( let [key, value] of Object.entries(_keyValue) ) {
+
+      // Indicate in the value cells if they are objects, arrays, or null
+      if ( typeof value === 'object') value = getDataType(value).toUpperCase();
+      
+      const row           = objTable.insertRow();
+
+      // Build the cell for the key
+      const keyCell       = row.insertCell();
+      keyCell.textContent   = key;
+
+
+      // Build the cell for the value
+      const valueCell     = row.insertCell();
+      valueCell.textContent = value;    // Report NULL in place of an empty string
+
+   }
+
+   header.innerHTML = `<th>${indexOrKey}</th><th>Value</th>`;
+
+   objTable.addEventListener('click', handleCellClick);
+
+   const div = document.createElement('div');
+   div.appendChild(objTable);
+   div.classList.add('object-table-wrapper');
+
+   
+   return div;
+
+}
+
+// FIXME: For demonstration only. Needs rewrite
+function handleCellClick(e) {
+   
+   const previewTable = buildPreviewSubpanel(e.target.parentNode.children[0].textContent, e.target.parentNode.children[1].textContent);
+
+   if (valuePanel.childNodes.length > 1) {
+
+      valuePanel.removeChild(valuePanel.childNodes[1]);
+   }
+
+   // valuePanel.appendChild(document.createElement('br'));
+   valuePanel.appendChild(previewTable);
+
+}

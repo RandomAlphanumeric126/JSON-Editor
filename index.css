@@ -1,0 +1,42 @@
+/* Active Selections */
+/* I'm not sure where to place this style yet */
+.selected > .branch-name,
+.key-browser-grid .selected,
+.object-table .selected {
+   background-color : var(--selection-bg);
+   border-radius    : var(--selection-border-radius);
+   outline          : var(--selection-stroke);
+   outline-offset   : -1px;
+}
+
+
+/* TODO: ?? Move to components or reset */
+:root {
+   scrollbar-color: var(--color-gray-600) var(--scrollbar-color);
+}
+
+
+
+/* Hover state for select-able elements */
+.key-value:hover:not(.selected),
+.object-table tr:hover:not(.selected, :has(th)) {
+   background-color: var(--global-bg);
+   border-radius: var(--selection-border-radius);
+}
+
+
+
+.key-value img,
+.preview-header-wrapper img {
+      filter : brightness(0.4);
+}
+
+.path-tree-wrapper:has( .path-tree > ul) {
+
+   #load-test-data {
+      opacity: 0.5;
+      background-color: var(--global-bg) !important;
+      border: none !important;
+   }
+
+}

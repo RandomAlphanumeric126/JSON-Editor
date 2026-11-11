@@ -1,0 +1,51 @@
+body {
+   display               : grid;
+   padding               : var(--body-padding);
+   grid-template-columns : var(--path-tree--width) auto var(--value-panel--width);
+   grid-template-rows    : var(--nav-panel-height) minmax(auto, 100%);
+   background-color      : var(--global-bg);
+   gap                   : var(--panel-gap);
+
+   > * {
+      border-radius: var(--global-border-radius);
+   }
+}
+
+
+
+.nav-bar {
+   grid-column-start : 1;
+   grid-column-end   : 3;
+   background-color  : var(--nav-panel-bg);
+}
+
+
+
+.path-tree-wrapper {
+   background-color : var(--path-tree-bg);
+   overflow            : auto;
+}
+
+.path-tree {
+   height: 100%;
+   overflow: auto;
+}
+
+
+.key-browser-wrapper {
+   background-color: var(--key-browser-bg);
+   overflow: auto;
+}
+.key-browser-scrollbox {
+   height: 100%;
+   overflow: auto;
+}
+
+
+
+#value-panel {
+   background-color : var(--value-panel-bg);
+   grid-row-start: 1;
+   grid-row-end: -1;
+   grid-column-start: 3;
+}

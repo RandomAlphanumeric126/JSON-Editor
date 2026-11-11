@@ -1,0 +1,17 @@
+/* Inherited typography for the entire page/app */
+body {
+   color : var(--global-text-color_base);
+   font-family: "Open Sans", Arial, Helvetica, sans-serif;
+   /* line-height: var(--global-line-height); */
+}
+
+.key-browser-grid label {
+   word-break : break-word;
+   text-align : center;
+}
+
+.object-table-wrapper td {
+   white-space   : nowrap;
+   overflow      : hidden;
+   text-overflow : ellipsis;
+}

@@ -1,0 +1,260 @@
+:root { /* Size Ramps */
+
+   --size-rem-05 : 0.125rem;
+   --size-rem-10 : 0.25rem;
+   --size-rem-20 : 0.50rem;
+   --size-rem-25 : 0.75rem;
+   --size-rem-30 : 1.00rem;
+   --size-rem-35 : 1.25rem;
+   --size-rem-40 : 1.50rem;
+   --size-rem-50 : 2.00rem;
+   --size-rem-60 : 3.00rem;
+   --size-rem-70 : 4.00rem;
+   --size-rem-80 : 6.00rem;
+   --size-rem-90 : 8.00rem;
+
+   --size-px-01 : 1px;
+   --size-px-05 : 2px;
+   --size-px-10 : 4px;
+   --size-px-20 : 8px;
+   --size-px-25 : 12px;
+   --size-px-30 : 16px;
+   --size-px-40 : 24px;
+   --size-px-50 : 32px;
+   --size-px-60 : 48px;
+
+   --size-em-05 : 0.125em;
+   --size-em-10 : 0.25em;
+   --size-em-20 : 0.50em;
+   --size-em-25 : 0.75em;
+   --size-em-30 : 1.00em;
+   --size-em-35 : 1.25em;
+   --size-em-40 : 1.50em;
+   --size-em-50 : 2.00em;
+   --size-em-60 : 3.00em;
+   --size-em-70 : 4.00em;
+   --size-em-80 : 6.00em;
+   --size-em-90 : 8.00em;
+
+}
+
+
+:root { /* Base Colors */
+
+   /* Hues */
+   --hue-primary: 230;     /* Blue */
+   --hue-secondary: 50;    /* Goldenrod */
+
+   /* Saturations */
+   --sat-strong: 90%;
+   --sat-vivid: 70%;
+   --sat-base: 50%;
+   --sat-soft: 20%;
+   --sat-dull: 5%;
+
+
+   /* Black scale */
+   --color-black-010: hsl(var(--hue-primary), var(--sat-dull), 1%);
+   --color-black-020: hsl(var(--hue-primary), var(--sat-dull), 2%);
+   --color-black-030: hsl(var(--hue-primary), var(--sat-dull), 3%);
+   --color-black-040: hsl(var(--hue-primary), var(--sat-dull), 4%);
+   --color-black-050: hsl(var(--hue-primary), var(--sat-dull), 5%);
+   --color-black-060: hsl(var(--hue-primary), var(--sat-dull), 6%);
+   --color-black-070: hsl(var(--hue-primary), var(--sat-dull), 7%);
+   --color-black-080: hsl(var(--hue-primary), var(--sat-dull), 8%);
+   --color-black-090: hsl(var(--hue-primary), var(--sat-dull), 9%);
+
+
+   /* Gray scale */
+   --color-gray-100: hsl(var(--hue-primary),  var(--sat-dull), 10%);
+   --color-gray-200: hsl(var(--hue-primary),  var(--sat-dull), 20%);
+   --color-gray-300: hsl(var(--hue-primary),  var(--sat-dull), 30%);
+   --color-gray-400: hsl(var(--hue-primary),  var(--sat-dull), 40%);
+   --color-gray-500: hsl(var(--hue-primary),  var(--sat-dull), 50%);
+   --color-gray-600: hsl(var(--hue-primary),  var(--sat-dull), 60%);
+   --color-gray-700: hsl(var(--hue-primary),  var(--sat-dull), 70%);
+   --color-gray-800: hsl(var(--hue-primary),  var(--sat-dull), 80%);
+   --color-gray-900: hsl(var(--hue-primary),  var(--sat-dull), 90%);
+
+   /* White scale */
+   --color-white-910: hsl(var(--hue-primary), var(--sat-dull), 91%);
+   --color-white-920: hsl(var(--hue-primary), var(--sat-dull), 92%);
+   --color-white-930: hsl(var(--hue-primary), var(--sat-dull), 93%);
+   --color-white-940: hsl(var(--hue-primary), var(--sat-dull), 94%);
+   --color-white-950: hsl(var(--hue-primary), var(--sat-dull), 95%);
+   --color-white-960: hsl(var(--hue-primary), var(--sat-dull), 96%);
+   --color-white-970: hsl(var(--hue-primary), var(--sat-dull), 97%);
+   --color-white-980: hsl(var(--hue-primary), var(--sat-dull), 98%);
+   --color-white-990: hsl(var(--hue-primary), var(--sat-dull), 99%);
+
+   /* Primary Scale - Soft */
+   --color-primary-soft-200: hsl(var(--hue-primary), var(--sat-soft), 20%);
+   --color-primary-soft-300: hsl(var(--hue-primary), var(--sat-soft), 30%);
+   --color-primary-soft-400: hsl(var(--hue-primary), var(--sat-soft), 40%);
+   --color-primary-soft-500: hsl(var(--hue-primary), var(--sat-soft), 50%);
+   --color-primary-soft-600: hsl(var(--hue-primary), var(--sat-soft), 60%);
+   --color-primary-soft-700: hsl(var(--hue-primary), var(--sat-soft), 70%);
+   --color-primary-soft-800: hsl(var(--hue-primary), var(--sat-soft), 80%);
+
+   /* Primary Scale - Base */
+   --color-primary-base-200: hsl(var(--hue-primary), var(--sat-base), 20%);
+   --color-primary-base-300: hsl(var(--hue-primary), var(--sat-base), 30%);
+   --color-primary-base-400: hsl(var(--hue-primary), var(--sat-base), 40%);
+   --color-primary-base-500: hsl(var(--hue-primary), var(--sat-base), 50%);
+   --color-primary-base-600: hsl(var(--hue-primary), var(--sat-base), 60%);
+   --color-primary-base-700: hsl(var(--hue-primary), var(--sat-base), 70%);
+   --color-primary-base-800: hsl(var(--hue-primary), var(--sat-base), 80%);
+
+   /* Primary Scale - Vivid */
+   --color-primary-vivid-200: hsl(var(--hue-primary), var(--sat-vivid), 20%);
+   --color-primary-vivid-300: hsl(var(--hue-primary), var(--sat-vivid), 30%);
+   --color-primary-vivid-400: hsl(var(--hue-primary), var(--sat-vivid), 40%);
+   --color-primary-vivid-500: hsl(var(--hue-primary), var(--sat-vivid), 50%);
+   --color-primary-vivid-600: hsl(var(--hue-primary), var(--sat-vivid), 60%);
+   --color-primary-vivid-700: hsl(var(--hue-primary), var(--sat-vivid), 70%);
+   --color-primary-vivid-800: hsl(var(--hue-primary), var(--sat-vivid), 80%);
+
+
+   /* Secondary Scale - Soft */
+   --color-secondary-soft-200: hsl(var(--hue-secondary), var(--sat-soft), 20%);
+   --color-secondary-soft-300: hsl(var(--hue-secondary), var(--sat-soft), 30%);
+   --color-secondary-soft-400: hsl(var(--hue-secondary), var(--sat-soft), 40%);
+   --color-secondary-soft-500: hsl(var(--hue-secondary), var(--sat-soft), 50%);
+   --color-secondary-soft-600: hsl(var(--hue-secondary), var(--sat-soft), 60%);
+   --color-secondary-soft-700: hsl(var(--hue-secondary), var(--sat-soft), 70%);
+   --color-secondary-soft-800: hsl(var(--hue-secondary), var(--sat-soft), 80%);
+
+   /* Secondary Scale - Base */
+   --color-secondary-base-200: hsl(var(--hue-secondary), var(--sat-base), 20%);
+   --color-secondary-base-300: hsl(var(--hue-secondary), var(--sat-base), 30%);
+   --color-secondary-base-400: hsl(var(--hue-secondary), var(--sat-base), 40%);
+   --color-secondary-base-500: hsl(var(--hue-secondary), var(--sat-base), 50%);
+   --color-secondary-base-600: hsl(var(--hue-secondary), var(--sat-base), 60%);
+   --color-secondary-base-700: hsl(var(--hue-secondary), var(--sat-base), 70%);
+   --color-secondary-base-800: hsl(var(--hue-secondary), var(--sat-base), 80%);
+
+   /* Secondary Scale - Vivid */
+   --color-secondary-vivid-200: hsl(var(--hue-secondary), var(--sat-vivid), 20%);
+   --color-secondary-vivid-300: hsl(var(--hue-secondary), var(--sat-vivid), 30%);
+   --color-secondary-vivid-400: hsl(var(--hue-secondary), var(--sat-vivid), 40%);
+   --color-secondary-vivid-500: hsl(var(--hue-secondary), var(--sat-vivid), 50%);
+   --color-secondary-vivid-600: hsl(var(--hue-secondary), var(--sat-vivid), 60%);
+   --color-secondary-vivid-700: hsl(var(--hue-secondary), var(--sat-vivid), 70%);
+   --color-secondary-vivid-800: hsl(var(--hue-secondary), var(--sat-vivid), 80%);
+   
+}
+
+
+:root { /* Color Tokens */
+   
+   --scrollbar-color: hsla(var(--hue-primary), var(--sat-dull), 25%, 0);
+
+   --global-text-color_base: var(--color-black-030);
+   --global-text-color_soft: hsla(from var(--global-text-color_base) h s l / 0.6);
+
+   --global-bg: hsl(from var(--color-gray-800) h s calc(l + 0));
+
+   --nav-panel-bg    : var(--global-bg);
+   --location-bar-bg : hsl(from var(--nav-panel-bg) h s calc(l + 4));
+   --address-bar-bg  : hsl(from var(--location-bar-bg) h s calc(l + 4));
+
+   --path-tree-bg : var(--color-white-920);
+
+   --key-browser-bg        : var(--color-white-980);
+   --key-value-color_hover : var(--color-white-910);
+
+   --value-panel-bg : var(--color-white-920);
+
+   --selection-bg             : hsl(from var(--color-primary-vivid-600) h s l / 0.25);
+   --selection-border-radius  : var(--size-px-10);
+   --selection-stroke-color   : hsl(from var(--color-primary-vivid-600) h s l / 0.6);
+   --selection-stroke         : 1px solid var(--selection-stroke-color);
+
+   --focus-stroke-color: var(--color-primary-vivid-500);
+   
+   --button-stroke      : 0px solid;
+   --button-l-steps     : 5;
+
+   --button-bg-base     : var(--color-gray-800);
+   --button-bg-hover    : hsl(from var(--button-bg-base) h s calc(l - var(--button-l-steps)));
+   --button-bg-focus    : var(--button-bg-hover);
+   --button-bg-active   : hsl(from var(--button-bg-base) h s calc(l - (var(--button-l-steps) * 2)));
+   --button-bg-disabled : hsla(from var(--button-bg-base) h s l / 0.5);
+
+   --button-stroke-color_base   : hsl(from var(--button-bg-base) h s calc(l - 30));
+   --button-stroke-color_hover  : hsl(from var(--button-bg-hover) h s calc(l - 30));
+   --button-stroke-color_focus  : var(--button-stroke-color_hover);
+   --button-stroke-color_active : hsl(from var(--button-bg-active) h s calc(l - 30));
+
+   --button-disabled-opacity    : 75%;
+   --button-disabled-text-color : var(--color-black-050);
+
+
+}
+
+:root { /* Size Tokens */
+
+   /* Typography */
+   --global-line-height : var(--size-em-35);
+
+   /* Box Model */
+   --body-padding             : var(--size-px-10);
+   --panel-padding            : var(--size-px-20);
+   --panel-gap                : var(--size-px-10);
+   --path-tree--width         : 20vw;
+   --value-panel--width       : 30vw;
+   --expand-button-size       : var(--size-px-25);
+
+   --key-browser-grid-gap     : var(--size-px-25);
+   --key-browser-tile-gap     : var(--size-px-20);
+   --key-browser-tile-padding : var(--size-px-10);
+   --key-browser-tile-width   : 80px;
+   --key-browser-icon-size    : 64px;
+
+   --nav-panel-height          : var(--size-rem-50);
+   --nav-buttons-wrapper-width : var(--path-tree--width);
+   --file-picker-height        : 100%;
+   --file-picker-max-width     : 15ch;
+   --file-picker-padding       : var(--size-px-10);
+   --location-bar-gap          : var(--size-px-10);
+   --location-bar-height       : 100%;
+   --location-bar-padding      : calc(var(--size-px-10) - 1px);
+   --address-bar-height        : min(var(--size-em-40), calc(var(--nav-panel-height) - var(--panel-padding)));
+   --nav-button-height         : var(--address-bar-height);
+   
+   --value-panel-gap : var(--size-px-30);
+   --hr-weight       : var(--size-px-05);
+   --table-row-padding: var(--size-px-10);
+   --value-preview-table-max-height: calc(100% - var(--nav-panel-height));
+
+
+   
+   /* Path Tree Indents and Spacing */
+   --branch-title-padding: var(--size-px-10);
+   --hierarchy-guide-line: 1px dotted var(--color-gray-100);
+   --hierarchy-indent-width: calc(var(--expand-button-size) + var(--branch-title-padding));
+   --hierarchy-guide-space-pre: calc(var(--expand-button-size)/2);
+   --hierarchy-guide-space-post: calc( var(--hierarchy-indent-width) - var(--hierarchy-guide-space-pre) - 1px);
+
+   /* Decoration */
+   --global-border-radius        : var(--size-px-10);
+   --expand-button-border-radius : calc(var(--size-em-10) / 2);
+   --focus-stroke-size           : var(--size-px-05);
+
+}
+
+
+:root { /* Active Selections */
+   --none: none;
+   /* --selection-stroke-shape       : 1px solid var(--colors-active__selection--outline); */
+   
+}
+
+
+:root {
+
+
+   --hover-effect-timing: ease-in 0.05s;
+
+
+}

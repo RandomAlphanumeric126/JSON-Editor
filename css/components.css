@@ -1,0 +1,41 @@
+.spring {
+   flex: 1;
+}
+
+/* Button and States */
+*:is(button, :where(.button)) {
+   border-radius : var(--global-border-radius);
+   border        : var(--button-stroke);
+   border-color  : var(--button-stroke-color_base);
+
+   &:hover{
+      background-color : var(--button-bg-hover);
+      border-color     : var(--button-stroke-color_focus);
+   }
+
+   &:focus,
+   &:focus-within {
+      background-color : var(--button-bg-focus);
+      border-color     : var(--button-stroke-color_hover);
+   }
+
+   &:is(.file-picker):focus-within,    /* Special case for the file-picker label */
+   &:focus-visible {
+      outline          : var(--focus-stroke-size) solid;
+      outline-color    : var(--focus-stroke-color);
+      outline-offset   : 1px;
+   }
+
+   &:active {
+      background-color : var(--button-bg-active);
+      border-color     : var(--button-stroke-color_active);
+   }
+
+   &:disabled {
+      color            : var(--button-disabled-text-color);
+      background-color : var(--button-bg-disabled);
+      opacity          : var(--button-disabled-opacity);
+      border-color     : transparent;
+   }
+
+}

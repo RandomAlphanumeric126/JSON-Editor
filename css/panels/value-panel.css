@@ -1,0 +1,118 @@
+.value-panel { /* Top level styles */
+   display        : flex;
+   flex-direction : column;
+   gap            : var(--value-panel-gap);
+   overflow       : hidden;      /* REQUIRED: Allows "overflow-y : auto" for children to scroll, not sure why this works */
+}
+
+
+
+.value-panel { /* Resets (Element styles) */
+
+   hr {
+      height           : var(--hr-weight);
+      border-radius    : var(--hr-weight);
+      border           : none;
+      background-color : var(--global-bg);
+   }
+
+
+
+   thead,
+   tbody,
+   tr {
+      display: grid;
+      align-self: stretch;
+
+      &:not(tr) {    /* exclude tr */
+         padding: 0 var(--panel-padding);
+      }
+   }
+
+
+   table {
+      display: flex;
+      flex-direction: column;
+   }
+
+
+   tr {
+      grid-template-columns: 1fr 1fr;
+   }
+
+   table {
+      width              : 100%;
+      table-layout       : fixed;
+      height             : 100%;
+      grid-template-rows : max-content auto;
+
+   }
+
+   thead {
+      position : sticky;
+      background-color: var(--value-panel-bg);
+      top      : 0;
+   }
+
+   tbody {
+      overflow-y: auto;
+   }
+
+
+   td,
+   th {
+      padding          : var(--table-row-padding);
+      vertical-align   : top;
+   }
+
+   tr td:first-child { text-align: right; }
+
+}
+
+
+.object-table .selected {
+   outline-offset: -1px;
+}
+
+
+
+.object-table-wrapper,
+.preview-table-wrapper {
+   flex       : 1 1 50%;
+   min-height : 0;
+}
+
+
+.preview-table-wrapper {
+   padding: 0 var(--panel-padding);
+}
+
+
+.preview-header-wrapper {
+   height        : var(--nav-panel-height); /* NOTE: Match the height of the location bar */
+   display       : flex;
+   align-items   : center;
+   margin-bottom : calc((var(--panel-gap) - var(--hr-weight))/2);
+
+   img {
+      height: var(--nav-button-height);
+      aspect-ratio: 1;
+   }
+
+   h4 {
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+   }
+   
+}
+
+
+
+.preview-value-wrapper {
+   overflow-y       : auto;
+   padding          : var(--panel-padding) 0;
+   height           : var(--value-preview-table-max-height);
+   > p {white-space : pre-wrap;}
+}
