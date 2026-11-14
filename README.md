@@ -92,11 +92,11 @@ Currently, the application is available as a read-only beta version. As I am a n
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Start by loading a json file by clicking the 'Select a file' button in the navigation bar. Once the file has loaded, the navigation tree will be populated and initialized with the root location. From there, users can begin navigating the JSON structure. Users can expand and collapse branches, or select one to display the value keys it contains. The navigation buttons located to the left of the address bar can be used for stepping through the navigation history or stepping out of the current node.
 
-*For more examples, please refer to the [Documentation](https://example.com)*
+Within the browser panel (center), where the slected node's keys are displayed, users can select the key with a single click to display the value for the selected key in the right-most panel. Objects and arrays, when selected, will display a table to quickly see what content is nested inside it. Otherwise, the direct value of the selected key is displayed. Selecting any row of the object table will display the associated value above the table.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Double clicking an object or array from within the browser panel allows users to step into the object/array, displaying it's content the browser panel. Clicking any empty space of the browser panel will de-select the currently selected key.
 
 <!-- ROADMAP -->
 
