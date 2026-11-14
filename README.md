@@ -28,7 +28,7 @@
 <br />
 <div align="center">
   
-  <img src="https://github.com/RandomAlphanumeric126/JSON-Browser/blob/main/docs/images/json-icon.png">
+  <img src="https://github.com/RandomAlphanumeric126/JSON-Browser/blob/main/docs/images/json-icon.svg">
 
 <h3 align="center">JSON Browser</h3>
 <br />
