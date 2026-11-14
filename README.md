@@ -31,7 +31,6 @@
   <img src="https://github.com/RandomAlphanumeric126/JSON-Browser/blob/main/docs/images/json-icon.svg" style="width: 64px">
 
 <h3 align="center">JSON Browser</h3>
-<br />
 
 <p align="center" style="width:min(100%, 60ch)">
    A familiar and user-friendly graphical interface for exploring complex or deeply nested JSON data.
@@ -39,7 +38,6 @@
 
 </div>
 
-<br />
 <br />
 <br />
 
