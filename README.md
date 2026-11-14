@@ -20,8 +20,8 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[Issues][issues-url]
-[LinkedIn][linkedin-url]
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 
