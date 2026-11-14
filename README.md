@@ -94,73 +94,40 @@ Currently, the application is available as a read-only beta version. As I am a n
 
 Start by loading a json file by clicking the 'Select a file' button in the navigation bar. Once the file has loaded, the navigation tree will be populated and initialized with the root location. From there, users can begin navigating the JSON structure. Users can expand and collapse branches, or select one to display the value keys it contains. The navigation buttons located to the left of the address bar can be used for stepping through the navigation history or stepping out of the current node.
 
+[ *The demonstration version also includes some test data that can be loaded so users may explore the app without having to provide their own file.* ]
+
 Within the browser panel (center), where the slected node's keys are displayed, users can select the key with a single click to display the value for the selected key in the right-most panel. Objects and arrays, when selected, will display a table to quickly see what content is nested inside it. Otherwise, the direct value of the selected key is displayed. Selecting any row of the object table will display the associated value above the table.
 
 Double clicking an object or array from within the browser panel allows users to step into the object/array, displaying it's content the browser panel. Clicking any empty space of the browser panel will de-select the currently selected key.
 
-<!-- ROADMAP -->
+<!-- Planned Features -->
 
-## Roadmap
+## Planned Features
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-  - [ ] Nested Feature
-
-See the [open issues](https://github.com/RandomAlphanumeric126/JSON-Browser/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- Open leaf nodes in larger panel with double-click
+- Search the JSON data for desired keys
+   - Filter results by depth and data type
+- Edit values within the current JSON data
+   - Export the edited data to a *.json file
+- Add new keys/entries to the current JSON data
+- Map the structure of the loaded JSON data for consistant additions
 
 <!-- CONTRIBUTING -->
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+This is currenlty a solo project with the primary goal of helping me grow as a developer. As such, while appreciate any interest, I am not currently seeking contributors. However, if you would like to help, you may do so by submitting any issues you experience to the [issue tracker](https://github.com/RandomAlphanumeric126/JSON-Browser/issues). In the future, I may be open to taking on contributors. 
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Top contributors:
-
-<a href="https://github.com/RandomAlphanumeric126/JSON-Browser/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=RandomAlphanumeric126/JSON-Browser" alt="contrib.rocks image" />
-</a>
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the project_license. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+If you have any questions or need further assistance, please feel free to reach out to me.
 
 <!-- CONTACT -->
 
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Jonathan Blue - contact@jon.blue
 
-Project Link: [https://github.com/RandomAlphanumeric126/JSON-Browser](https://github.com/RandomAlphanumeric126/JSON-Browser)
+You can also find me at [https://jon.blue](https://jon.blue)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-- []()
-- []()
-- []()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
